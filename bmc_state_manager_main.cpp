@@ -2,6 +2,8 @@
 #include "config.h"
 #include "bmc_state_manager.hpp"
 
+#include <iostream>
+
 int main(int argc, char**)
 {
     auto bus = sdbusplus::bus::new_default();
@@ -17,6 +19,8 @@ int main(int argc, char**)
 
     bus.request_name(BMC_BUSNAME);
 
+    std::cout<<"Hello World" <<std::endl;
+    
     while (true)
     {
         bus.process_discard();
